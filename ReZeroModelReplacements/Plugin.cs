@@ -18,16 +18,6 @@ namespace ReZeroModelAdditions
     {
         public static ConfigFile config;
 
-        // Universal config options 
-        public static ConfigEntry<bool> enableMikuForAllSuits { get; private set; }
-        public static ConfigEntry<bool> enableMikuAsDefault { get; private set; }
-        public static ConfigEntry<string> suitNamesToEnableMiku { get; private set; }
-        
-        // Miku model specific config options
-        public static ConfigEntry<float> UpdateRate { get; private set; }
-        public static ConfigEntry<float> distanceDisablePhysics { get; private set; }
-        public static ConfigEntry<bool> disablePhysicsAtRange { get; private set; }
-
         public void InitConfig()
         {
             return;
