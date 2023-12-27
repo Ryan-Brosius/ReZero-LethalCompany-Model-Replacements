@@ -10,7 +10,7 @@
 
 # Currently Added Characters
 ![alt text](https://imgur.com/8M1g2rs.png)
-![alt text](https://imgur.com/LKf5wgX.png)
+![alt text](https://i.imgur.com/LIoUwZh.png)
 
 ## Notes / Known Issues
 + Mod requires [More Suits](https://thunderstore.io/c/lethal-company/p/x753/More_Suits/)
