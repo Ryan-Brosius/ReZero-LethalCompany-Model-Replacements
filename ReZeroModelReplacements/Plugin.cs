@@ -5,16 +5,14 @@ using System.Reflection;
 using ModelReplacement;
 using BepInEx.Configuration;
 using System;
+using ReZeroModelAdditions.Replacements;
 
 //using System.Numerics;
 
-namespace HatsuneMikuModelReplacement
+namespace ReZeroModelAdditions
 {
 
-
-
-
-    [BepInPlugin("meow.MikuModelReplacement", "Miku Model", "1.4.1")]
+    [BepInPlugin("tacocat.ReZeroModels", "ReZero Company", "1.0.0")]
     [BepInDependency("meow.ModelReplacementAPI", BepInDependency.DependencyFlags.HardDependency)]
     public class Plugin : BaseUnityPlugin
     {
@@ -30,17 +28,11 @@ namespace HatsuneMikuModelReplacement
         public static ConfigEntry<float> distanceDisablePhysics { get; private set; }
         public static ConfigEntry<bool> disablePhysicsAtRange { get; private set; }
 
-        private static void InitConfig()
+        public void InitConfig()
         {
-            enableMikuForAllSuits = config.Bind<bool>("Suits to Replace Settings", "Enable Miku for all Suits", false, "Enable to replace every suit with Miku. Set to false to specify suits");
-            enableMikuAsDefault = config.Bind<bool>("Suits to Replace Settings", "Enable Miku as default", false, "Enable to replace every suit that hasn't been otherwise registered with Miku.");
-            suitNamesToEnableMiku = config.Bind<string>("Suits to Replace Settings", "Suits to enable Miku for", "Default,Orange suit", "Enter a comma separated list of suit names.(Additionally, [Green suit,Pajama suit,Hazard suit])");
-
-            UpdateRate = config.Bind<float>("Dynamic Bone Settings", "Update rate", 60, "Refreshes dynamic bones more times per second the higher the number");
-            disablePhysicsAtRange = config.Bind<bool>("Dynamic Bone Settings", "Disable physics at range", false, "Enable to disable physics past the specified range");
-            distanceDisablePhysics = config.Bind<float>("Dynamic Bone Settings", "Distance to disable physics", 20, "If Disable physics at range is enabled, this is the range after which physics is disabled.");
-            
+            return;
         }
+
         private void Awake()
         {
             config = base.Config;
@@ -50,23 +42,18 @@ namespace HatsuneMikuModelReplacement
             // Plugin startup logic
 
 
-            if (enableMikuForAllSuits.Value)
-            {
-                ModelReplacementAPI.RegisterModelReplacementOverride(typeof(BodyReplacementMiku));
+            ModelReplacementAPI.RegisterSuitModelReplacement("Emilia", typeof(EmiliaReplacement));
 
-            }
-            if (enableMikuAsDefault.Value)
-            {
-                ModelReplacementAPI.RegisterModelReplacementDefault(typeof(BodyReplacementMiku));
+            ModelReplacementAPI.RegisterSuitModelReplacement("Beatrice", typeof(BeatriceReplacement));
 
-            }
+            ModelReplacementAPI.RegisterSuitModelReplacement("Felix", typeof(FelixReplacement));
 
-            var commaSepList = suitNamesToEnableMiku.Value.Split(',');
-            foreach (var item in commaSepList)
-            {
-                ModelReplacementAPI.RegisterSuitModelReplacement(item, typeof(BodyReplacementMiku));
-            }
-                
+            ModelReplacementAPI.RegisterSuitModelReplacement("Rem", typeof(RemReplacement));
+
+            ModelReplacementAPI.RegisterSuitModelReplacement("Ram", typeof(RamReplacement));
+
+            ModelReplacementAPI.RegisterSuitModelReplacement("Subaru", typeof(SubaruReplacement));
+
 
             Harmony harmony = new Harmony("meow.MikuModelReplacement");
             harmony.PatchAll();
