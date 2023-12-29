@@ -62,4 +62,14 @@ namespace ReZeroModelAdditions.Replacements
             return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
         }
     }
+
+    public class FeltReplacement : BodyReplacementBase
+    {
+        protected override GameObject LoadAssetsAndReturnModel()
+        {
+            //Replace with the Asset Name from your unity project 
+            string model_name = "feltPrefab";
+            return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
+        }
+    }
 }

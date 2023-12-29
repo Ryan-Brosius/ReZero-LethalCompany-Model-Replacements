@@ -42,12 +42,13 @@ namespace ReZeroModelAdditions
 
             ModelReplacementAPI.RegisterSuitModelReplacement("Ram", typeof(RamReplacement));
 
+            ModelReplacementAPI.RegisterSuitModelReplacement("Felt", typeof(FeltReplacement));
+
             ModelReplacementAPI.RegisterSuitModelReplacement("Subaru", typeof(SubaruReplacement));
 
 
-            Harmony harmony = new Harmony("meow.MikuModelReplacement");
+            Harmony harmony = new Harmony("tacocat.ReZeroModels");
             harmony.PatchAll();
-            Logger.LogInfo($"Plugin {"meow.MikuModelReplacement"} is loaded!");
         }
     }
     public static class Assets
