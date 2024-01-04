@@ -12,7 +12,7 @@ using ReZeroModelAdditions.Replacements;
 namespace ReZeroModelAdditions
 {
 
-    [BepInPlugin("tacocat.ReZeroModels", "ReZero Company", "1.0.0")]
+    [BepInPlugin("tacocat.ReZeroModels", "ReZero Company", "1.1.0")]
     [BepInDependency("meow.ModelReplacementAPI", BepInDependency.DependencyFlags.HardDependency)]
     public class Plugin : BaseUnityPlugin
     {
@@ -45,6 +45,10 @@ namespace ReZeroModelAdditions
             ModelReplacementAPI.RegisterSuitModelReplacement("Felt", typeof(FeltReplacement));
 
             ModelReplacementAPI.RegisterSuitModelReplacement("Subaru", typeof(SubaruReplacement));
+
+            ModelReplacementAPI.RegisterSuitModelReplacement("Emilia Pajamas", typeof(EmiliaPajamasReplacement));
+
+            ModelReplacementAPI.RegisterSuitModelReplacement("Reinhard", typeof(ReinhardReplacement));
 
 
             Harmony harmony = new Harmony("tacocat.ReZeroModels");

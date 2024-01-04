@@ -11,6 +11,11 @@ namespace ReZeroModelAdditions.Replacements
             string model_name = "emiliaPrefab";
             return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
         }
+
+        protected override void AddModelScripts()
+        {
+            UseNoPostProcessing = true;
+        }
     }
 
     public class BeatriceReplacement : BodyReplacementBase
@@ -20,6 +25,11 @@ namespace ReZeroModelAdditions.Replacements
             //Replace with the Asset Name from your unity project 
             string model_name = "beatricePrefab";
             return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
+        }
+
+        protected override void AddModelScripts()
+        {
+            UseNoPostProcessing = true;
         }
     }
 
@@ -31,6 +41,11 @@ namespace ReZeroModelAdditions.Replacements
             string model_name = "felixPrefab";
             return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
         }
+
+        protected override void AddModelScripts()
+        {
+            UseNoPostProcessing = true;
+        }
     }
 
     public class RamReplacement : BodyReplacementBase
@@ -40,6 +55,11 @@ namespace ReZeroModelAdditions.Replacements
             //Replace with the Asset Name from your unity project 
             string model_name = "ramPrefab";
             return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
+        }
+
+        protected override void AddModelScripts()
+        {
+            UseNoPostProcessing = true;
         }
     }
 
@@ -51,6 +71,11 @@ namespace ReZeroModelAdditions.Replacements
             string model_name = "remPrefab";
             return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
         }
+
+        protected override void AddModelScripts()
+        {
+            UseNoPostProcessing = true;
+        }
     }
 
     public class SubaruReplacement : BodyReplacementBase
@@ -61,6 +86,11 @@ namespace ReZeroModelAdditions.Replacements
             string model_name = "subaruPrefab";
             return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
         }
+
+        protected override void AddModelScripts()
+        {
+            UseNoPostProcessing = true;
+        }
     }
 
     public class FeltReplacement : BodyReplacementBase
@@ -70,6 +100,41 @@ namespace ReZeroModelAdditions.Replacements
             //Replace with the Asset Name from your unity project 
             string model_name = "feltPrefab";
             return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
+        }
+
+        protected override void AddModelScripts()
+        {
+            UseNoPostProcessing = true;
+        }
+    }
+
+    public class EmiliaPajamasReplacement : BodyReplacementBase
+    {
+        protected override GameObject LoadAssetsAndReturnModel()
+        {
+            //Replace with the Asset Name from your unity project 
+            string model_name = "emiliaPajamasPrefab";
+            return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
+        }
+
+        protected override void AddModelScripts()
+        {
+            UseNoPostProcessing = true;
+        }
+    }
+
+    public class ReinhardReplacement : BodyReplacementBase
+    {
+        protected override GameObject LoadAssetsAndReturnModel()
+        {
+            //Replace with the Asset Name from your unity project 
+            string model_name = "reinhardPrefab";
+            return Assets.MainAssetBundle.LoadAsset<GameObject>(model_name);
+        }
+
+        protected override void AddModelScripts()
+        {
+            UseNoPostProcessing = true;
         }
     }
 }
